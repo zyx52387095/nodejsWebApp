@@ -37,4 +37,9 @@ const update = function(req, res){
     });
     }}
 
-module.exports = { "update": update };
+const home = function (req, res) {
+    const ret = {};
+    res.render("feedback", { data: ret });
+}
+
+module.exports = { "update": update, "home":home };
