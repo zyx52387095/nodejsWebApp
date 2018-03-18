@@ -10,9 +10,9 @@ router.get('/', function (req, res) {
     res.render("feedback", { a: req.session.user.username });
 });
 
-router.post('/', function(req, res){
+router.post('/thankyou', function(req, res){
     //res.render("thankyou",{ a: req.session.user.username });
-    feedbacks.updt
+    feedbacks.update;
 });
 
 
