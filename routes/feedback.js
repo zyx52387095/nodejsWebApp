@@ -11,14 +11,9 @@ router.get('/', function (req, res) {
 });
 
 router.post('/', function(req, res){
-    res.render("thankyou")
+    //res.render("thankyou",{ a: req.session.user.username });
+    feedbacks.updt
 });
 
-router.get('/thankyou', function(req, res){
-    res.render("thankyou")
-});
-
-
-router.route('/thankyou').post(urlencodedparser, feedbacks.update);
 
 module.exports = router;

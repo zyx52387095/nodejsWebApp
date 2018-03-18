@@ -54,7 +54,7 @@ const passwordMatchcheck = function (req, res, next) {
             req.session.user=user;
             //add user to session
             //req.session.userId = user._id;
-            return res.redirect('/users');
+            return res.redirect('/feedback');
         }
     })
 };
