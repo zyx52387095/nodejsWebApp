@@ -7,20 +7,24 @@
        </head>
               
 <body>
-<html>
-    <h1> Thank you! </h1>
-    <body>
-            <script src="/public/js/bootstrap.bundle.min.js"></script>
-             <script src="/public/js/bootstrap.min.js"></script>
-             <table align="center">
-             <tr><th>Username</th><th> </th><th>Feedback </th><th>&nbsp;</th></tr>
-             <%= a %>
-             
 
-            
-           
-       </table>
-    </body>
-</html>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron">
+                    <h1>Thank you!</h1>
+                    <h3>Hi <%= username %></h3>
+                    <p>
+                        Your feedback: <br>
+                        <%= feedback %>
+                    </p>
+                    <p><a class="btn btn-primary btn-lg" href="/users" role="button">user page</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="/public/js/bootstrap.bundle.min.js"></script>
+<script src="/public/js/bootstrap.min.js"></script>
 </body>
 </html>
