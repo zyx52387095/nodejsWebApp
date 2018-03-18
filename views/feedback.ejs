@@ -9,9 +9,9 @@
     function updateForm(action_name, data){
          switch (action_name){
                 case 'submit': 
-                        document.userform.action='/feedback/thankyou';
-                        document.userform.method='POST'
-                        document.userform.submit();
+                        document.feedbackform.action='/feedback/thankyou';
+                        document.feedbackform.method='POST'
+                        document.feedbackform.submit();
                         break;
                 case 'cancel':
                         document.userform2.action='/feedback';
