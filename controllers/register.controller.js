@@ -18,7 +18,7 @@ const insert = function (req, res) {
             email: req.body.email,
             username: req.body.username,
             password: req.body.password,
-
+            feedback: ''
         }
         //password confirm check
 
