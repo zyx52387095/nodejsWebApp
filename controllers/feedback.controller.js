@@ -32,7 +32,7 @@ const update = function(req, res){
             //res.render("thankyou");
             //res.redirect('/feedback/thankyou');
         });
-        res.render("thankyou");
+        res.render("thankyou", {feedback: newFeedback, username: currentUser});
     }}
 
 

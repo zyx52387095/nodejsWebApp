@@ -12,7 +12,7 @@ router.get('/', function (req, res) {
 
 router.post('/', function(req, res){
     //res.render("thankyou",{ a: req.session.user.username });
-    feedbacks.updt
+    feedbacks.update(req, res)
 });
 
 
