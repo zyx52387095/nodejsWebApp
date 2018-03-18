@@ -7,7 +7,7 @@ const urlencodedparser = bodyparser.urlencoded({ extended: false });
 const feedbacks = require('../controllers/feedback.controller');
 
 router.get('/', function (req, res) {
-    res.render("feedback");
+    res.render("feedback", { a: req.session.user.username });
 });
 
 router.post('/', function(req, res){

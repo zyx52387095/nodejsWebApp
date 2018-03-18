@@ -51,7 +51,7 @@ const passwordMatchcheck = function (req, res, next) {
             err.status = 401;
             return next(err);
         } else {
-            req.session.username=user.username;
+            req.session.user=user;
             //add user to session
             //req.session.userId = user._id;
             return res.redirect('/users');

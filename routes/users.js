@@ -7,7 +7,7 @@ const urlencodedparser = bodyparser.urlencoded({ extended: false });
 const user = require('../controllers/users.controller');
 
 router.use(function (req, res, next) {
-    if(!req.session.username){
+    if(!req.session.user){
         res.send('you need to login first')
         //return res.redirect('/login');
         res.redirect('/login');
