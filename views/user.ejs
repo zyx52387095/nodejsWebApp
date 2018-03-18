@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <link rel="stylesheet" href="/public/style.css">
+                <link rel="stylesheet" href="/public/css/bootstrap.min.css">
+                <link rel="stylesheet" href="/public/css/bootstrap-grid.min.css">
+        </head>
+    <script>
+    function updateForm(action_name, data){
+         switch (action_name){
+                case 'add': 
+                        document.userform.action='/users';
+                        document.userform.method='POST'
+                        document.userform.submit();
+                        break;
+                case 'findall':
+                        document.userform2.action='/users/findall';
+                        document.userform2.method='GET'
+                        document.userform2.submit();
+                        break;
+                 case 'update':
+                        document.userform.action='/users/update/'+data;
+                        document.userform.method='POST'
+                        break;
+                case 'find':
+                         if (!data){
+                                alert('need student id');
+                                return;
+                        }
+                        document.userform.action='/users/sid/'+data;
+                        document.userform.method='GET'
+                        break;
+        }
+         
+    }
+    </script>          
+    <body>
+            <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+            <script src="/public/js/bootstrap.bundle.min.js"></script>
+            <script src="/public/js/bootstrap.min.js"></script>
+             <br>
+            <form action="" name="userform" id="userform">
+                        <%= data.msg %>
+                        <%=data.fullName %>
+            
+                <div>First name:<input type="text" name="firstname"  value='<%= data.firstname %>' ></div>
+                 <div>Last name: <input type="text" name="lastname"  value='<%= data.lastname %>' ></div>
+                <div>Student ID: <input type="number" name="studentid"  value='<%= data.studentid %>' ></div>
+                <div>Note: <textarea name="notes" rows="10" cols="30" > <%= data.notes %> </textarea></div>
+
+                <div>
+                 <input type="submit" value="Add" onclick="updateForm('add')">&nbsp;
+                 <input type="submit" value="Update" onclick="updateForm('update','<%= data._id %>')">&nbsp;
+                 <input type="submit" value="Find" onclick="updateForm('find',userform.studentid.value)">&nbsp;
+               </div>
+            </form> 
+            <form action="" name="userform2" id="userform2">
+                        <input type="submit" value="FindAll" onclick="updateForm('findall')">&nbsp;
+             </form>
+    </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <link rel="stylesheet" href="/public/style.css">
+                <link rel="stylesheet" href="/public/css/bootstrap.min.css">
+                <link rel="stylesheet" href="/public/css/bootstrap-grid.min.css">
+        </head>
+    <script>
+    function updateForm(action_name, data){
+         switch (action_name){
+                case 'submit': 
+                        document.userform.action='/feedback/thankyou';
+                        document.userform.method='POST'
+                        document.userform.submit();
+                        break;
+                case 'cancel':
+                        document.userform2.action='/feedback';
+                        document.userform2.method='GET'
+                        document.userform2.submit();
+                        break;
+                // case 'update':
+                //         document.userform.action='/users/update/'+data;
+                //         document.userform.method='POST'
+                //         break;
+                // case 'find':
+                //          if (!data){
+                //                 alert('need student id');
+                //                 return;
+                //         }
+                //         document.userform.action='/users/sid/'+data;
+                //         document.userform.method='GET'
+                //         break;
+        }
+         
+    }
+    </script>          
+    <body>
+            <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+            <script src="/public/js/bootstrap.bundle.min.js"></script>
+            <script src="/public/js/bootstrap.min.js"></script>
+             <br>
+            <form action="" name="feedbackform" id="feedbackform">
+
+            
+                
+                <div>Feedback: <textarea name="feedback" rows="10" cols="30" > </textarea></div>
+
+                <div>
+                 <input type="submit" value="Submit" onclick="updateForm('submit')">&nbsp;
+                 <!-- <input type="submit" value="Update" onclick="updateForm('cancel')">&nbsp; -->
+               </div>
+            </form> 
+
+    </body>
+</html>

@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="/public/style.css">
+    <link rel="stylesheet" href="/public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/css/bootstrap-grid.min.css">
+</head>
+<script>
+    function updateForm(action_name, data) {
+        switch (action_name) {
+            case 'login':
+                document.loginform.action = '/login';
+                document.loginform.method = 'POST'
+                document.loginform.submit();
+                break;
+            case 'signUp':
+                document.loginform.action = '/login/register';
+                document.loginform.method = 'GET'
+                document.loginform.submit();
+                break;
+        }
+
+    }
+</script>
+<body>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="/public/js/bootstrap.bundle.min.js"></script>
+    <script src="/public/js/bootstrap.min.js"></script>
+    <br>
+
+    <form action="" name="loginform" id="loginform">
+        
+
+        <div>Username:<input type="text" name="username" ></div>
+        <div>Password: <input type="password" name="password" ></div>
+
+
+        <div>
+            <input type="submit" value="Login" onclick="updateForm('login')">&nbsp;
+            <input type="submit" value="Sign Up" onclick="updateForm('signUp')">&nbsp;
+
+        </div>
+    </form>
+
+</body>
+</html>

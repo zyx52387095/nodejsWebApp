@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="/public/style.css">
+    <link rel="stylesheet" href="/public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/css/bootstrap-grid.min.css">
+</head>
+<script>
+    function updateForm(action_name, data) {
+        switch (action_name) {
+            case 'register':
+                document.registerform.action = '/login/register';
+                document.registerform.method = 'POST'
+                document.registerform.submit();
+                break;
+            case 'cancel':
+                document.registerform.action = '/login/';
+                document.registerform.method = 'GET'
+                document.registerform.submit();
+                break;
+        }
+
+    }
+</script>
+<body>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="/public/js/bootstrap.bundle.min.js"></script>
+    <script src="/public/js/bootstrap.min.js"></script>
+    <br>
+
+    <form action="" name="registerform" id="registerform">
+        
+
+
+        <div>Username:<input type="text" name="username"  ></div>
+        <div>Password: <input type="password" name="password"></div>
+        <div>Confirm Password: <input type="password" name="passwordConf"></div>
+        <div>Email: <input type="text" name="email"></div>
+
+        <div>
+            <input type="submit" value="Register" onclick="updateForm('register')">&nbsp;
+            <input type="submit" value="Cancel" onclick="updateForm('cancel')">&nbsp;
+
+        </div>
+    </form>
+
+</body>
+</html>

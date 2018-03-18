@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <link rel="stylesheet" href="/public/style.css">
+                <link rel="stylesheet" href="/public/css/bootstrap.min.css">
+                <link rel="stylesheet" href="/public/css/bootstrap-grid.min.css">
+       </head>
+              
+<body>
+<html>
+    <h1> List of Users</h1>
+    <body>
+            <script src="/public/js/bootstrap.bundle.min.js"></script>
+             <script src="/public/js/bootstrap.min.js"></script>
+             <table align="center">
+             <tr><th>First Name</th><th>Last Name</th><th>Student ID</th><th>&nbsp;</th></tr>
+            <% data.users.forEach(item=> { %>
+                <tr>
+                        <td>
+                            <%=item.firstname %>
+                         </td>
+                        <td>
+                                <%=item.lastname %>
+                        </td>
+                        <td>
+                                <%=item.studentid || '' %>
+                        </td>
+                        <td>
+                                <a href="/user/<%=item._id%>">
+                                   Load
+                                </a>
+                        </td>
+                 </tr>        
+                </tr>        
+           <% }) %>
+       </table>
+    </body>
+</html>
+</body>
+</html>

@@ -1,0 +1,26 @@
+body {
+    background-color: powderblue;
+}
+h1 {
+    color: blue;
+    text-align: center;
+}
+p {
+    color: red;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form > div {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+form > div input, form > div textarea {
+    margin-left: 1rem;
+}
